@@ -369,6 +369,7 @@ def game_tick():
 def start_game(*args):
     state["game_active"] = True
     show_screen("game-ui")
+    document["global-footer"].classList.add("hidden")
     render_shelves()
     update_hud()
     
@@ -416,6 +417,7 @@ def continue_game(ev):
 def go_menu(ev):
     state["game_active"] = False
     show_screen("main-menu")
+    document["global-footer"].classList.remove("hidden")
 
 @bind("#btn-stock", "click")
 def open_stock_menu(ev):
