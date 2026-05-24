@@ -419,6 +419,11 @@ def go_menu(ev):
     show_screen("main-menu")
     document["global-footer"].classList.remove("hidden")
 
+@bind("#btn-about", "click")
+def show_about(ev):
+    about_text = "لعبة مول الحانوت\nتطوير: هشام هيري (14 سنة)\nلعبة لتدريب الحساب الذهني بطريقة ممتعة ومغربية 100%." if state["lang"] == "ar" else "Jeu Moul El Hanout\nDéveloppé par: Hicham Hiri (14 ans)\nUn jeu pour entraîner le calcul mental de façon amusante et 100% marocaine."
+    show_modal(t("about"), about_text, False, buttons=[(t("close"), close_modal)])
+
 @bind("#btn-stock", "click")
 def open_stock_menu(ev):
     # Buy 5 of each for 20dh for demo simplicity
